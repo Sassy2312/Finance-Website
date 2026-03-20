@@ -20,8 +20,10 @@ const API = {
 };
 
 async function fetchAPI(path) {
+  const BASE = "https://finance-backend-93ve.onrender.com";
+
   try {
-    const r = await fetch(path);
+    const r = await fetch(BASE + path);
     if (!r.ok) return null;
     return await r.json();
   } catch {
