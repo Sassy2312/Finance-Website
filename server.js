@@ -324,12 +324,6 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// ── Serve static frontend (production) ──────────────────────
-app.use(express.static(join(__dirname, "dist")));
-app.get("*", (req, res) => {
-  res.sendFile(join(__dirname, "dist", "index.html"));
-});
-
 // ── START ────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`\n  ⚡ Vantage backend running on http://localhost:${PORT}`);
